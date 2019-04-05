@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-mongoose.connect('mongodb://localhost/API_PAMOBILE');
+mongoose.connect('mongodb://mongo:27017/API_PAMOBILE');
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Erreur lors de la connexion'));
 db.once('open', function (){
